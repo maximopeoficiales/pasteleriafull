@@ -32,7 +32,7 @@ class UI {
     deleteProduct(element) {
         if (element.name === 'delete') {
             element.parentElement.parentElement.remove();
-            this.showMessage('Producto agregado correctamente', 'Exito');
+            this.showMessage('Producto eliminado correctamente', 'success');
         }
     }
 
@@ -68,12 +68,12 @@ document.getElementById('product-form')
 
         // Input User Validation
         if (name === '' || cantidad === '' || color === '') {
-            ui.showMessage('Los productos sera eliminados', 'Aviso');
+            ui.showMessage('Los productos sera eliminados', 'danger');
         }
 
         // Save Product
         ui.addProduct(product);
-        ui.showMessage('Producto agregado correctamente', 'Exito');
+        ui.showMessage('Producto agregado correctamente', 'success');
         ui.resetForm();
 
         e.preventDefault();
