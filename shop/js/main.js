@@ -83,7 +83,7 @@ document.getElementById('tabs').addEventListener('click', e => {
     }
 
 })
-
+/* suma de numeros */
 function suma(){
     var num1=Number(document.getElementById('precio').value);
     var num2=Number(document.getElementById('cantidad').value);

@@ -1,8 +1,10 @@
+/* esto es una extension de javascript para que funcione en otros navegadores */
+
 // Product Constructor
-function Product(name, price, year) {
+function Product(name, cantidad, color) {
     this.name = name;
-    this.price = price;
-    this.year = year; 
+    this.cantidad = cantidad;
+    this.color = color; 
 }
 
 // UI Constructor
@@ -13,8 +15,8 @@ UI.prototype.addProduct = function(product) {
     const row = document.createElement('div');
     row.innerHTML = `
         ${product.name}
-        ${product.price}
-        ${product.year}
+        ${product.cantidad}
+        ${product.color}
         <a href="#" class="delete">Delete</a>
     `;
     productList.appendChild(row);
@@ -50,17 +52,17 @@ document.getElementById('product-form')
     .addEventListener('submit', function (e) {
 
         const name = document.getElementById('name').value,
-            price = document.getElementById('price').value,
-            year = document.getElementById('year').value;
+            cantidad = document.getElementById('cantidad').value,
+            color = document.getElementById('color').value;
         
         // Create a new Oject Product
-        const product = new Product(name, price, year);
+        const product = new Product(name, cantidad, color);
 
         // Create a new UI
         const ui = new UI();
 
         // Input User Validation
-        if(name === '' || price === '' || year === '') {
+        if(name === '' || cantidad === '' || color === '') {
             ui.showMessage('Please Insert data in all fields', 'danger');
         }
 

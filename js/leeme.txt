@@ -1,0 +1,1 @@
+todos archivos son de jquery , esto nos permite dar esa animacion a las imagenes en el slidebar

@@ -1,4 +1,5 @@
 // Product Constructor
+
 class Product {
     constructor(name, cantidad, color) {
         this.name = name;
@@ -11,7 +12,7 @@ class Product {
 class UI {
     addProduct(product) {
         const productList = document.getElementById('product-list');
-        const element = document.createElement('div');
+        const element = document.createElement('div');/* se va crear un div  con los siguientes parametros*/
         element.innerHTML = `
             <div class="card text-center mb-4">
                 <div class="card-body">
@@ -22,30 +23,31 @@ class UI {
                 </div>
             </div>
         `;
-        productList.appendChild(element);
+        productList.appendChild(element);/* mueve de posicion al agregar un nuevo producto */
     }
 
     resetForm() {
-        document.getElementById('product-form').reset();
+        document.getElementById('product-form').reset();/* resetea la lista */
     }
 
     deleteProduct(element) {
-        if (element.name === 'delete') {
+        if (element.name === 'delete') { /* cuando presiones el elmento delete que es parte del div */
             element.parentElement.parentElement.remove();
             this.showMessage('Producto eliminado correctamente', 'success');
+            /* muestra mensaje,tipo de mensaje */
         }
     }
-
+/* metodo para mostrar el mensaje */
     showMessage(message, cssClass) {
         const div = document.createElement('div');
         div.className = `alert alert-${cssClass} mt-2`;
         div.appendChild(document.createTextNode(message));
-        // Show in The DOM
+        // muestra mensaje en el DOM 
         const container = document.querySelector('.container');
         const app = document.querySelector('#App');
-        // Insert Message in the UI
+        // LO INSERTA A LA GUI
         container.insertBefore(div, app);
-        // Remove the Message after 3 seconds
+        // /* SE QUITA A LOS 3 SEGUNDOS */
         setTimeout(function () {
             document.querySelector('.alert').remove();
         }, 3000);
@@ -53,6 +55,7 @@ class UI {
 }
 
 // DOM Events
+/* AQUI SOLO VAN LAS VALIDACIONES */
 document.getElementById('product-form')
     .addEventListener('submit', function (e) {
 
@@ -60,25 +63,25 @@ document.getElementById('product-form')
             cantidad = document.getElementById('cantidad').value,
             color = document.getElementById('color').value;
 
-        // Create a new Oject Product
+        // SE CREA UN OBJETO
         const product = new Product(name, cantidad, color);
 
-        // Create a new UI
+        // SE CREA LA UI
         const ui = new UI();
 
-        // Input User Validation
+        // VALIDACION
         if (name === '' || cantidad === '' || color === '') {
             ui.showMessage('Los productos sera eliminados', 'danger');
         }
 
-        // Save Product
+        // SE GUARDA EL OBJETO
         ui.addProduct(product);
         ui.showMessage('Producto agregado correctamente', 'success');
         ui.resetForm();
 
         e.preventDefault();
     });
-
+/* CUANDO DES CLICK SE EJECUTA LA ACCION BORRADO */
 document.getElementById('product-list')
     .addEventListener('click', function (e) {
         const ui = new UI();
