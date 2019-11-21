@@ -80,6 +80,7 @@ document.getElementById('product-form')
         ui.resetForm();
 
         e.preventDefault();
+        
     });
 /* CUANDO DES CLICK SE EJECUTA LA ACCION BORRADO */
 document.getElementById('product-list')
@@ -88,3 +89,9 @@ document.getElementById('product-list')
         ui.deleteProduct(e.target);
         e.preventDefault();
     });
+
+    /* pasar_Dato */
+function pasar_dato(){
+    document.getElementById("text1").value=document.getElementById("text2").value;
+}
+

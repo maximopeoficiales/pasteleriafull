@@ -30,6 +30,7 @@
                         <h4>Agregar un Producto</h4>
                     </div>
                     <form id="product-form" class="card-body">
+
                         <div class="form-group">
                             <input type="text" id="name" placeholder="Nombre Producto" class="form-control">
                         </div>
@@ -37,17 +38,31 @@
                             <input type="number" id="cantidad" step="1" placeholder="Cantidad" class="form-control">
                         </div>
                         <div class="form-group">
-                            <input type="text" id="color"  value="Rojo" placeholder="Color" class="form-control">
+                            <input type="text" id="color" value="Rojo" placeholder="Color" class="form-control">
                         </div>
+
                         <input type="submit" value="Save" class="btn btn-primary btn-block">
                     </form>
+
+
                 </div>
             </div>
 
             <div id="product-list" class="col-md-8"></div>
         </div>
-    </div>
+        <form class="card-body">
 
+            <input type="text" id="text1" class="form-control" readonly="true">
+
+        </form>
+        <script>
+            /* nombre del cliente */
+        var nombre= prompt("Ingresa su nombre ");
+        document.getElementById("text1").value= "Cliente Actual: "+nombre;
+
+    </script>
+    </div>
+    
     <script src="App.js"></script>
 </body>
 

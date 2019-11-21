@@ -85,8 +85,8 @@ document.getElementById('tabs').addEventListener('click', e => {
 })
 /* suma de numeros */
 function suma(){
-    var num1=Number(document.getElementById('precio').value);
-    var num2=Number(document.getElementById('cantidad').value);
+    var num1=Number(document.getElementById('text1').value);
+    var num2=Number(document.getElementById('text2').value);
     var pagototal= num1*num2;
     document.getElementById('pagototal').value=pagototal;
 }
